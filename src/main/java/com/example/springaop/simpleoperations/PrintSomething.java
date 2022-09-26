@@ -15,5 +15,20 @@ public class PrintSomething {
         logger.info("Today's Date :" + new Date());
     }
 
+    public String concatenate (String name,String phonenumber,String Address){
+      return "Name :"+name+" PhoneNumber :"+phonenumber+" Address :"+Address;
+    }
+    public String concatenate2 (String FirstName,String phonenumber,String Address){
+        return "FirstName :"+FirstName+" PhoneNumber :"+phonenumber+" Address :"+Address;
+    }
+    public void printInfo(){
+
+        logger.info(concatenate("Lolo","+254710xxx43x","Nairobi Westlands"));
+    }
+
+
+
+
+
 
 }

@@ -17,8 +17,8 @@ class PrintSomethingTest {
 
 
     @Test
-    @DisplayName("Testing Before Aspect")
-    public void testBeforeAspect() {
+    @DisplayName("Testing Before and After Aspect")
+    public void testBeforeAndAfterAspect() {
 
         factory = new AspectJProxyFactory(printSomething);
         factory.addAspect(new ExampleAspects());
@@ -26,4 +26,27 @@ class PrintSomethingTest {
         proxy.printDate();
 
     }
+
+    @Test
+    @DisplayName("Testing Around Aspect")
+    public void testAroundAspect() {
+
+        factory = new AspectJProxyFactory(printSomething);
+        factory.addAspect(new ExampleAspects());
+        PrintSomething proxy = factory.getProxy();
+        proxy.printInfo();
+
+    }
+
+    @Test
+    @DisplayName("Testing Around Aspect with Arguments")
+    public void testAroundAspectWithArguments() {
+
+        factory = new AspectJProxyFactory(printSomething);
+        factory.addAspect(new ExampleAspects());
+        PrintSomething proxy = factory.getProxy();
+        proxy.concatenate("lolo","0712******","Westlands");
+
+    }
+
 }
