@@ -16,17 +16,18 @@ public class ExampleClassAspect {
 
     @Pointcut("execution(* *.*.*.*.SimplePoJo.*(..))")
     public void AnyMethodInSimplePoJo() {
-     }
+    }
 
-     @Before("AnyMethodInSimplePoJo()")
-    public void beforeSimplePojoPointCut(JoinPoint Jp){
-        logger.info("Method Signature :"+Jp.getSignature());
+    @Before("AnyMethodInSimplePoJo()")
+    public void beforeSimplePojoPointCut(JoinPoint Jp) {
+        logger.info("Method Signature :" + Jp.getSignature());
         logger.info("Before Advice using Pointcut on Any Method in SimplePojo Class");
 
-     }
+    }
+
     @After("AnyMethodInSimplePoJo()")
-    public void afterSimplePojoPointCut(JoinPoint Jp){
-        logger.info("Method Signature :"+Jp.getSignature());
+    public void afterSimplePojoPointCut(JoinPoint Jp) {
+        logger.info("Method Signature :" + Jp.getSignature());
         logger.info("After Advice using Pointcut on Any Method in SimplePojo Class");
 
     }

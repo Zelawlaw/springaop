@@ -1,7 +1,6 @@
 package com.example.springaop.simpleoperations;
 
 import Aspects.ExampleWithinAspect;
-import com.example.springaop.moresimpleoperations.MoreSimpleOperationsPojo;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
@@ -10,7 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.logging.Logger;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 class SimpleOperationsPojoTest {
 
@@ -26,7 +26,6 @@ class SimpleOperationsPojoTest {
         factory.addAspect(new ExampleWithinAspect());
         SimpleOperationsPojo proxy = factory.getProxy();
         proxy.setSomevar("Zelawlaw");
-
-        assertEquals("Zelawlaw", proxy.getSomevar(),"It should Return Zelawlaw");
+        assertEquals("Zelawlaw", proxy.getSomevar(), "It should Return Zelawlaw");
     }
 }

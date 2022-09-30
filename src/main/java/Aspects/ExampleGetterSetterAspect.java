@@ -3,7 +3,10 @@ package Aspects;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 import java.util.logging.Level;
@@ -17,6 +20,7 @@ public class ExampleGetterSetterAspect {
     @Pointcut("execution(* *.*.*.*.*.set*(..))")
     public void AnySetterMethod() {
     }
+
     @Pointcut("execution(* *.*.*.*.*.get*(..))")
     public void AnyGetterMethod() {
     }
@@ -26,36 +30,39 @@ public class ExampleGetterSetterAspect {
     }
 
     @Before("AnySetterMethod()")
-    public void beforeSetterMethod(JoinPoint Jp){
-        logger.info("Method Signature :"+Jp.getSignature());
+    public void beforeSetterMethod(JoinPoint Jp) {
+        logger.info("Method Signature :" + Jp.getSignature());
         logger.info("Before Advice using Pointcut on Any Setter Method");
 
     }
-   // @Around("AnyGetterMethod()")
-    public Object AroundAnyGetterMethod(ProceedingJoinPoint Pjp){
+
+    // @Around("AnyGetterMethod()")
+    public Object AroundAnyGetterMethod(ProceedingJoinPoint Pjp) {
         Object value = null;
-        logger.info("Method Signature :"+Pjp.getSignature());
+        logger.info("Method Signature :" + Pjp.getSignature());
         logger.info("Before Around Advice using Pointcut on Any Getter Method ");
         logger.info("Proceeding...");
-        try{
+        try {
             value = Pjp.proceed();
+        } catch (Throwable ex) {
+            logger.log(Level.SEVERE, ex.getMessage());
         }
-        catch(Throwable ex){logger.log(Level.SEVERE,ex.getMessage());}
-        logger.info("after Around Advice using Pointcut on Any Getter Method with value:"+value);
+        logger.info("after Around Advice using Pointcut on Any Getter Method with value:" + value);
         return value;
     }
 
     @Around("AnyPublicIntGetterMethod()")
-    public Object AroundAnyPublicIntGetterMethod(ProceedingJoinPoint Pjp){
+    public Object AroundAnyPublicIntGetterMethod(ProceedingJoinPoint Pjp) {
         Object value = null;
-        logger.info("Method Signature :"+Pjp.getSignature());
+        logger.info("Method Signature :" + Pjp.getSignature());
         logger.info("Before Around Advice using Pointcut on Any Public Int Getter Method ");
         logger.info("Proceeding...");
-        try{
+        try {
             value = Pjp.proceed();
+        } catch (Throwable ex) {
+            logger.log(Level.SEVERE, ex.getMessage());
         }
-        catch(Throwable ex){logger.log(Level.SEVERE,ex.getMessage());}
-        logger.info("after Around Advice using Pointcut on Any Public Int Getter Method with value:"+value);
+        logger.info("after Around Advice using Pointcut on Any Public Int Getter Method with value:" + value);
         return value;
     }
 

@@ -10,7 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.logging.Logger;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 class MoreSimpleOperationsPojoTest {
 
@@ -27,7 +28,7 @@ class MoreSimpleOperationsPojoTest {
         MoreSimpleOperationsPojo proxy = factory.getProxy();
         proxy.setSomevar("Zelawlaw");
 
-        assertEquals("Zelawlaw", proxy.getSomevar(),"It should Return Zelawlaw");
+        assertEquals("Zelawlaw", proxy.getSomevar(), "It should Return Zelawlaw");
     }
 
 }
