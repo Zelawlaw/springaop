@@ -1,4 +1,4 @@
-package Aspects;
+package com.example.Aspects;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class ExampleClassAspect {
     public final Logger logger = Logger.getLogger(ExampleClassAspect.class.getName());
 
-    @Pointcut("execution(* *.*.*.*.SimplePoJo.*(..))")
+    @Pointcut("execution(* *.*.SimplePoJo.*(..))")
     public void AnyMethodInSimplePoJo() {
     }
 

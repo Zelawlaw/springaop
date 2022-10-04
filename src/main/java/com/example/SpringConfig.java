@@ -1,4 +1,4 @@
-package com.example.springaop;
+package com.example;
 
 
 import org.springframework.context.annotation.Configuration;

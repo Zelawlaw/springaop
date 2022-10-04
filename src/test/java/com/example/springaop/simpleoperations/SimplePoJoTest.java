@@ -1,6 +1,6 @@
 package com.example.springaop.simpleoperations;
 
-import Aspects.ExampleClassAspect;
+import com.example.Aspects.ExampleClassAspect;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
 import org.springframework.beans.factory.annotation.Autowired;

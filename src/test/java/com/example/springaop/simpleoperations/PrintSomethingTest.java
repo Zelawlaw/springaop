@@ -1,8 +1,8 @@
 package com.example.springaop.simpleoperations;
 
-import Aspects.ExampleAfterAspects;
-import Aspects.ExampleAroundAspects;
-import Aspects.ExampleBeforeAspects;
+import com.example.Aspects.ExampleAfterAspects;
+import com.example.Aspects.ExampleAroundAspects;
+import com.example.Aspects.ExampleBeforeAspects;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;

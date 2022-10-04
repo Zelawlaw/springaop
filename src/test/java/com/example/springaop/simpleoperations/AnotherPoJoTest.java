@@ -1,6 +1,6 @@
 package com.example.springaop.simpleoperations;
 
-import Aspects.ExampleGetterSetterAspect;
+import com.example.Aspects.ExampleGetterSetterAspect;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
@@ -48,6 +48,7 @@ class AnotherPoJoTest {
 
 
     @Test
+    @DisplayName("Showing all Spring-Managed Beans")
     void displayAllManagedBeans() {
         for (String bean : ctx.getBeanDefinitionNames()) {
             logger.info("Bean: " + bean);

@@ -1,4 +1,4 @@
-package Aspects;
+package com.example.Aspects;
 
 
 import org.aspectj.lang.JoinPoint;
@@ -17,15 +17,15 @@ import java.util.logging.Logger;
 public class ExampleGetterSetterAspect {
     public final Logger logger = Logger.getLogger(ExampleGetterSetterAspect.class.getName());
 
-    @Pointcut("execution(* *.*.*.*.*.set*(..))")
+    @Pointcut("execution(* *.*.*.set*(..))")
     public void AnySetterMethod() {
     }
 
-    @Pointcut("execution(* *.*.*.*.*.get*(..))")
+    @Pointcut("execution(* *.*.*.get*(..))")
     public void AnyGetterMethod() {
     }
 
-    @Pointcut("execution(public int *.*.*.*.*.get*(..))")
+    @Pointcut("execution(public int *.*.*.get*(..))")
     public void AnyPublicIntGetterMethod() {
     }
 

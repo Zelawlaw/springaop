@@ -1,4 +1,4 @@
-package Aspects;
+package com.example.Aspects;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;

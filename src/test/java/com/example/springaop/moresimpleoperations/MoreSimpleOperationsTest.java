@@ -1,7 +1,7 @@
 package com.example.springaop.moresimpleoperations;
 
 
-import Aspects.ExampleWithinAspect;
+import com.example.Aspects.ExampleWithinAspect;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
@@ -13,19 +13,19 @@ import java.util.logging.Logger;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class MoreSimpleOperationsPojoTest {
+class MoreSimpleOperationsTest {
 
-    private final Logger logger = Logger.getLogger(MoreSimpleOperationsPojoTest.class.getName());
+    private final Logger logger = Logger.getLogger(MoreSimpleOperationsTest.class.getName());
     @Autowired
-    MoreSimpleOperationsPojo moreSimpleOperationsPojo;
+    MoreSimpleOperations moreSimpleOperations;
     AspectJProxyFactory factory;
 
     @Test
     @DisplayName("Testing ExampleGetterSetterAspect with any getter and setter")
     void getSetGetName() {
-        factory = new AspectJProxyFactory(moreSimpleOperationsPojo);
+        factory = new AspectJProxyFactory(moreSimpleOperations);
         factory.addAspect(new ExampleWithinAspect());
-        MoreSimpleOperationsPojo proxy = factory.getProxy();
+        MoreSimpleOperations proxy = factory.getProxy();
         proxy.setSomevar("Zelawlaw");
 
         assertEquals("Zelawlaw", proxy.getSomevar(), "It should Return Zelawlaw");

@@ -1,13 +1,14 @@
-package com.example.springaop.simpleoperations;
+package com.example.springaop.moresimpleoperations;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class SimpleOperationsPojo {
+public class MoreSimpleOperationsImpl implements MoreSimpleOperations {
 
     String somevar;
 
-    public SimpleOperationsPojo() {
+    public MoreSimpleOperationsImpl() {
+
     }
 
     public String getSomevar() {
