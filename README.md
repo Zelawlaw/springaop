@@ -7,7 +7,26 @@ The implementations use logger to show how
 and where advice is implemented in regard to a target method.
 The project also contains tests that can be used to illustrate Spring AOP in action.
 
+To effectively use the project, knowledge of the Spring Framework and gradle is required.
+
 ## Project setup instructions
+## Requirements
+1) Java - preferrable version 8 and above
+2) Git
+3) Postman - will help interract with the API via the collection shared further down this document
+
+NB: The gradle wrapper is used to execute commands therefore gradle is not required to be installed.
+
+## Project setup instructions
+
+clone the project oto your machine
+```sh
+git clone https://github.com/Zelawlaw/springaop.git
+```
+build the project
+```sh
+ ./gradlew build
+```
 
 ## Important Spring AOP terms
 
