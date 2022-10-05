@@ -1,4 +1,4 @@
-package com.example.springaop.simpleoperations;
+package com.example.springaop.simpleops;
 
 import com.example.springaop.annotations.MethodTimeCalculator;
 import org.springframework.stereotype.Component;

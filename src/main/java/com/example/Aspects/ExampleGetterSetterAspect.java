@@ -17,17 +17,14 @@ import java.util.logging.Logger;
 public class ExampleGetterSetterAspect {
     public final Logger logger = Logger.getLogger(ExampleGetterSetterAspect.class.getName());
 
-    @Pointcut("execution(* *.*.*.set*(..))")
+    @Pointcut("execution(* *.*.springaop.*.*.set*(..))")
     public void AnySetterMethod() {
     }
 
-    @Pointcut("execution(* *.*.*.get*(..))")
+    @Pointcut("execution(* *.*.springaop.*.*.get*(..))")
     public void AnyGetterMethod() {
     }
 
-    @Pointcut("execution(public int *.*.*.get*(..))")
-    public void AnyPublicIntGetterMethod() {
-    }
 
     @Before("AnySetterMethod()")
     public void beforeSetterMethod(JoinPoint Jp) {
@@ -36,7 +33,7 @@ public class ExampleGetterSetterAspect {
 
     }
 
-    // @Around("AnyGetterMethod()")
+     @Around("AnyGetterMethod()")
     public Object AroundAnyGetterMethod(ProceedingJoinPoint Pjp) {
         Object value = null;
         logger.info("Method Signature :" + Pjp.getSignature());
@@ -51,19 +48,6 @@ public class ExampleGetterSetterAspect {
         return value;
     }
 
-    @Around("AnyPublicIntGetterMethod()")
-    public Object AroundAnyPublicIntGetterMethod(ProceedingJoinPoint Pjp) {
-        Object value = null;
-        logger.info("Method Signature :" + Pjp.getSignature());
-        logger.info("Before Around Advice using Pointcut on Any Public Int Getter Method ");
-        logger.info("Proceeding...");
-        try {
-            value = Pjp.proceed();
-        } catch (Throwable ex) {
-            logger.log(Level.SEVERE, ex.getMessage());
-        }
-        logger.info("after Around Advice using Pointcut on Any Public Int Getter Method with value:" + value);
-        return value;
-    }
+
 
 }

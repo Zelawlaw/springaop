@@ -1,4 +1,4 @@
-package com.example.springaop.simpleoperations;
+package com.example.springaop.simpleops;
 
 public interface SimpleOperations {
     public String getSomevar();

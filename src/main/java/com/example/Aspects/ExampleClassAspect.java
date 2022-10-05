@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class ExampleClassAspect {
     public final Logger logger = Logger.getLogger(ExampleClassAspect.class.getName());
 
-    @Pointcut("execution(* *.*.SimplePoJo.*(..))")
+    @Pointcut("execution(* *.*.springaop.*.SimplePoJo.*(..))")
     public void AnyMethodInSimplePoJo() {
     }
 

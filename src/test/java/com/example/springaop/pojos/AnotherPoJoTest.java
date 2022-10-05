@@ -1,4 +1,4 @@
-package com.example.springaop.simpleoperations;
+package com.example.springaop.pojos;
 
 import com.example.Aspects.ExampleGetterSetterAspect;
 import org.junit.jupiter.api.DisplayName;
@@ -27,32 +27,22 @@ class AnotherPoJoTest {
     @Test
     @DisplayName("Testing ExampleGetterSetterAspect with any getter and setter")
     void getSetGetName() {
-        factory = new AspectJProxyFactory(anotherPoJo);
+        factory = new AspectJProxyFactory(new AnotherPoJo());
         factory.addAspect(new ExampleGetterSetterAspect());
         AnotherPoJo proxy = factory.getProxy();
         proxy.setName("Jackson");
-        proxy.getName();
         assertEquals("Jackson", proxy.getName(), "It should Return Jackson");
     }
 
     @Test
     @DisplayName("Testing ExampleGetterSetterAspect with any getter, Setter returning int")
     void getSetGetYearsWorked() {
-        factory = new AspectJProxyFactory(anotherPoJo);
+        factory = new AspectJProxyFactory(new AnotherPoJo());
         factory.addAspect(new ExampleGetterSetterAspect());
         AnotherPoJo proxy = factory.getProxy();
         proxy.setYearsWorked(5);
         proxy.getYearsWorked();
         assertEquals(5, 5, "It should Return 5");
-    }
-
-
-    @Test
-    @DisplayName("Showing all Spring-Managed Beans")
-    void displayAllManagedBeans() {
-        for (String bean : ctx.getBeanDefinitionNames()) {
-            logger.info("Bean: " + bean);
-        }
     }
 
 

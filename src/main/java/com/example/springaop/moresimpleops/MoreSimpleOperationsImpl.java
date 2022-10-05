@@ -1,8 +1,9 @@
-package com.example.springaop.moresimpleoperations;
+package com.example.springaop.moresimpleops;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class MoreSimpleOperationsImpl implements MoreSimpleOperations {
 
     String somevar;

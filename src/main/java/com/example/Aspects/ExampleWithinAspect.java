@@ -17,11 +17,11 @@ import java.util.logging.Logger;
 public class ExampleWithinAspect {
     public final Logger logger = Logger.getLogger(ExampleWithinAspect.class.getName());
 
-    @Pointcut("within(*.*.*.simpleoperations.*)")
+    @Pointcut("within(*.*.*.simpleops.*)")
     public void withinSimpleoperations() {
     }
 
-    @Pointcut("within(*.*.*.moresimpleoperations.*)")
+    @Pointcut("within(*.*.*.moresimpleops.*)")
     public void withinMoresimpleoperations() {
     }
 
@@ -29,7 +29,7 @@ public class ExampleWithinAspect {
     @Before("withinSimpleoperations()")
     public void beforeAnyMethodinPackageSimpleOperations(JoinPoint Jp) {
         logger.info("Method Signature :" + Jp.getSignature());
-        logger.info("Before Advice using Pointcut on Any Setter Method");
+        logger.info("Before Advice using Pointcut on Any Method in simpleoperations package");
 
     }
 

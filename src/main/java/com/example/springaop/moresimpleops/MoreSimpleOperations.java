@@ -1,4 +1,4 @@
-package com.example.springaop.moresimpleoperations;
+package com.example.springaop.moresimpleops;
 
 public interface MoreSimpleOperations {
 

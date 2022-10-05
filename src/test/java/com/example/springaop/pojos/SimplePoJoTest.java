@@ -1,4 +1,4 @@
-package com.example.springaop.simpleoperations;
+package com.example.springaop.pojos;
 
 import com.example.Aspects.ExampleClassAspect;
 import org.junit.jupiter.api.Test;
@@ -13,14 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class SimplePoJoTest {
     private final Logger logger = Logger.getLogger(SimplePoJoTest.class.getName());
-    @Autowired
-    SimplePoJo simplePoJo;
 
     AspectJProxyFactory factory;
 
+
     @Test
     void getSetName() {
-        factory = new AspectJProxyFactory(simplePoJo);
+        factory = new AspectJProxyFactory(new SimplePoJo());
         factory.addAspect(new ExampleClassAspect());
         SimplePoJo proxy = factory.getProxy();
         proxy.setName("Lolo");

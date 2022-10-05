@@ -1,4 +1,4 @@
-package com.example.springaop.simpleoperations;
+package com.example.springaop.simpleops;
 
 import org.springframework.stereotype.Component;
 
@@ -6,9 +6,9 @@ import java.util.Date;
 import java.util.logging.Logger;
 
 @Component
-public class PrintSomething {
+public class PrintSomethingImpl implements PrintSomething {
 
-    private final Logger logger = Logger.getLogger(PrintSomething.class.getName());
+    private final Logger logger = Logger.getLogger(PrintSomethingImpl.class.getName());
 
     public void printDate() {
 

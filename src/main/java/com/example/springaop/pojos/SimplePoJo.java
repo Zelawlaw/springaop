@@ -1,4 +1,4 @@
-package com.example.springaop.simpleoperations;
+package com.example.springaop.pojos;
 
 
 import org.springframework.stereotype.Component;
