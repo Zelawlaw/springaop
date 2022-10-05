@@ -1,0 +1,103 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Spring AOP Examples copy",
+		"_postman_id": "a0ca5a8d-daea-052c-8d63-75fd06360955",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SimpleOperations",
+			"description": "",
+			"item": [
+				{
+					"name": "getSomevar",
+					"request": {
+						"url": "",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "setSomevar",
+					"request": {
+						"url": {
+							"raw": "localhost:8080/setSomevar?var=Zelawlaw",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"setSomevar"
+							],
+							"query": [
+								{
+									"key": "var",
+									"value": "Zelawlaw"
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "addsomenumbers",
+					"request": {
+						"url": "localhost:8080/addsomenumbers",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getSimplePojoName",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "setSimplePojoName",
+			"request": {
+				"url": "localhost:8080/setSimplePojoName",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

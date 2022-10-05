@@ -12,7 +12,7 @@ The project also contains tests that can be used to illustrate Spring AOP in act
 ## Important Spring AOP terms
 
 - [Digital Ocean Spring AOP tutorials](https://www.digitalocean.com/community/tutorials/spring-aop-example-tutorial-aspect-advice-pointcut-joinpoint-annotations)
-  by Pankaj has a pretty exhaustive and descriptive list of terms used in Spring AOP, have a look at that.
+  by Pankaj has a pretty exhaustive and descriptive list of terms used in Spring AOP.
 
 ## Ways to see Spring AOP in action in the project
 
@@ -20,12 +20,11 @@ The project also contains tests that can be used to illustrate Spring AOP in act
 
 The project has a number of tests that illustrate how Aspects, advice and pointcuts work and their effect in program
 execution.
-Let's look at such a test i.e. the **_addsomenumbers()_**  method in **_
-com.example.springaop.simpleops.SimpleOperationsTest_** class.
+Let's look at such a test i.e. the **_addsomenumbers()_**  method in **_com.example.springaop.simpleops.SimpleOperationsTest_** class.
 
 First, an AspectJProxyFactory object is instantiated.
 
-```sh
+```
     AspectJProxyFactory factory;
 ```
 
@@ -35,7 +34,7 @@ A proxy of the interface is then created from the factory object.
 The proxy will serve up the same methods as the interface. The advice will then be applied before delegating to the
 target object for execution of the target method.
 
-```sh
+```
   @Test
     @DisplayName("Testing Example Annotation Aspect with annotated method")
     void addsomenumbers() {
@@ -48,30 +47,30 @@ target object for execution of the target method.
 ```
 
 In the com.example.Aspects.ExampleAnnotationAspect class, we have an Around advice on an annotation pointcut.
-The aspect calculated the time taken to execute the target method.
+The aspect calculates the time taken to execute the target method.
 ![](otherresources/Example%20Annotation%20Aspect.png)
 
 The annotation in question is **_com.example.springaop.annotations.MethodTimeCalculator_** which is defined as
 shown below:
 
-```sh
+```
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
 public @interface MethodTimeCalculator {
 }
 ```
 
-An implementation of the annotation is as shown below:
-![](otherresources/MethodTimeCalculator%20annotation%20implementation.png)
+An implementation of the annotation is as shown below
 
-To run the test to view the effect of this Aspect, run the following at the project folder on the command line
+<img src="otherresources/MethodTimeCalculator_annotation_mplementation.png" alt="drawing" style="width:500px;"/>
+
+To run the test to view the effect of this Aspect, run the following at the project folder on the command line.
 
 ```sh
 ./gradlew  test --tests "com.example.springaop.simpleops.SimpleOperationsTest.addsomenumbers"
 ```
 As shown below, the logger in the aspect depicts the starting and stopping of the stopwatch
 ![](otherresources/test%20run%20result.png)
-
 Below are other Tests and their commands
 
 ##### Test Before Advice
@@ -116,8 +115,20 @@ Below are other Tests and their commands
 
 ### 2) APIs
 
-This will use the JDK dynamic proxy as opposed to the tests where we were creating our own
-The same annotation aspect can be seen in action in the addSomenumbers POST method located in the com.example.api.ApiSimpleOperationsResource class
+This will use Spring's JDK dynamic proxy as opposed to the tests where we were creating our own proxy from AspectJProxyFactory class.
+The same annotation aspect can be seen in action in the addSomenumbers POST method located in the **_com.example.api.ApiSimpleOperationsResource_** class
+
+The Postman Collection for the APIs can be found [here](otherresources/Spring%20AOP%20Examples%20copy.postman_collection.json)
+
+To use the API, run the task bootRun
+```sh
+ ./gradlew bootRun
+```
+Then execute the POST method from Postman.
+
+The result will be as below,depicting the aspect method still executing.
+
+![](otherresources/bootRun.png)
 
 ## References
 
