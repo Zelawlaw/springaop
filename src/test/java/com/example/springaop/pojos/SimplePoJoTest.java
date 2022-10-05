@@ -3,7 +3,6 @@ package com.example.springaop.pojos;
 import com.example.Aspects.ExampleClassAspect;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.logging.Logger;

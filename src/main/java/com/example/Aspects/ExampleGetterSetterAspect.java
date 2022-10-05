@@ -33,7 +33,7 @@ public class ExampleGetterSetterAspect {
 
     }
 
-     @Around("AnyGetterMethod()")
+    @Around("AnyGetterMethod()")
     public Object AroundAnyGetterMethod(ProceedingJoinPoint Pjp) {
         Object value = null;
         logger.info("Method Signature :" + Pjp.getSignature());
@@ -47,7 +47,6 @@ public class ExampleGetterSetterAspect {
         logger.info("after Around Advice using Pointcut on Any Getter Method with value:" + value);
         return value;
     }
-
 
 
 }

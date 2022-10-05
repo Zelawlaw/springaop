@@ -11,12 +11,12 @@ import java.util.logging.Logger;
 public class SpringaopApplication {
 
     private static final Logger logger = Logger.getLogger(SpringaopApplication.class.getName());
+
     public static void main(String[] args) {
         try {
             SpringApplication.run(SpringaopApplication.class, args);
-        }
-        catch(Exception Ex){
-            logger.log(Level.SEVERE,Ex.getMessage(),Ex);
+        } catch (Exception Ex) {
+            logger.log(Level.SEVERE, Ex.getMessage(), Ex);
         }
     }
 

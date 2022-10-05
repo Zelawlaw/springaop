@@ -20,7 +20,7 @@ public class ApiSimplePoJoResource {
 
     @GetMapping("/getSimplePojoName")
     public String getSimplePojoName() {
-      return   simplePojo.getName();
+        return simplePojo.getName();
 
     }
 
@@ -28,9 +28,10 @@ public class ApiSimplePoJoResource {
     public String setSimplePojoName(@RequestParam String name) {
         try {
             simplePojo.setName(name);
+        } catch (Exception Ex) {
+            logger.log(Level.SEVERE, Ex.getMessage(), Ex);
         }
-        catch(Exception Ex){logger.log(Level.SEVERE,Ex.getMessage(),Ex);}
-      return simplePojo.getName();
+        return simplePojo.getName();
     }
 
 }

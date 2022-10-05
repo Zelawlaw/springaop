@@ -25,7 +25,7 @@ public class ApiSimpleOperationsResource {
 
     @GetMapping("/getSomevar")
     public String getSomevar() {
-      return   simpleOperations.getSomevar();
+        return simpleOperations.getSomevar();
 
     }
 
@@ -33,20 +33,21 @@ public class ApiSimpleOperationsResource {
     public String setSomevar(@RequestParam String var) {
         try {
             simpleOperations.setSomevar(var);
+        } catch (Exception Ex) {
+            logger.log(Level.SEVERE, Ex.getMessage(), Ex);
         }
-        catch(Exception Ex){logger.log(Level.SEVERE,Ex.getMessage(),Ex);}
-      return simpleOperations.getSomevar();
+        return simpleOperations.getSomevar();
     }
 
 
     @PostMapping("/addsomenumbers")
     public int addSomenumbers(@RequestParam int a, @RequestParam int b) {
-        int result =0;
+        int result = 0;
         try {
-            simpleOperations.addsomenumbers(a,b);
+            simpleOperations.addsomenumbers(a, b);
+        } catch (Exception Ex) {
+            logger.log(Level.SEVERE, Ex.getMessage(), Ex);
         }
-        catch(Exception Ex){logger.log(Level.SEVERE,Ex.getMessage(),Ex);}
-        logger.info("beans :"+ Arrays.toString(ctx.getBeanDefinitionNames()));
-        return  result;
+        return result;
     }
 }
